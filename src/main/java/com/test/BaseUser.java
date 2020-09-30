@@ -1,7 +1,5 @@
 package com.test;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -14,10 +12,7 @@ public abstract class BaseUser {
     private final int id;
     private final String name;
 
-    @JsonCreator
-    protected BaseUser(
-            @JsonProperty("id") int id,
-            @JsonProperty("name") String name) {
+    protected BaseUser(int id, String name) {
         this.id = id;
         this.name = name;
     }
